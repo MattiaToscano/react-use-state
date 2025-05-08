@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import languages from './languages'
 import React from 'react'
-import ButtonList from './assets/components/Button'
-import DescriptionLanguage from './assets/components/DescriptionLanguage'
+import ButtonList from './assets/components/ButtonList'  // Verifica che il percorso sia corretto
+import languages from './languages'
 
 const App = () => {
   const [activeLanguage, setActiveLanguage] = useState(null)
@@ -10,9 +9,7 @@ const App = () => {
   return (
     <div className="container">
       <h1>Learn Web development</h1>
-      <ul>
-        <ButtonList />
-      </ul>
+      <ButtonList setActiveLanguage={setActiveLanguage} />
       {activeLanguage && (
         <div className="language-description">
           <h2>{activeLanguage.title}</h2>

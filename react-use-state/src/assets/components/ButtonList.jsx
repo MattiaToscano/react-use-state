@@ -1,26 +1,22 @@
 import React from 'react'
-import { useState } from 'react'
 import languages from '../../languages'
 
-const Button = () => {
-    const [activeLanguage, setActiveLanguage] = useState(null)
-
+// Ricevi setActiveLanguage come prop dal componente genitore
+const ButtonList = ({ setActiveLanguage }) => {
     return (
-        <div>
-            <ul>
-                {languages.map((language) => (
-                    <li key={language.id}>
-                        <button
-                            className={`btn ${language.title.toLowerCase()}`}
-                            onClick={() => setActiveLanguage(language)}
-                        >
-                            {language.title}
-                        </button>
-                    </li>
-                ))}
-            </ul>
-        </div>
+        <ul>
+            {languages.map((language) => (
+                <li key={language.id}>
+                    <button
+                        className={`btn ${language.title.toLowerCase()}`}
+                        onClick={() => setActiveLanguage(language)}
+                    >
+                        {language.title}
+                    </button>
+                </li>
+            ))}
+        </ul>
     )
 }
 
-export default Button
+export default ButtonList
