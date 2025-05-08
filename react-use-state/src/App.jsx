@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import languages from './languages'
 import React from 'react'
-import Button from './assets/components/Button'
+import ButtonList from './assets/components/Button'
+import DescriptionLanguage from './assets/components/DescriptionLanguage'
 
 const App = () => {
   const [activeLanguage, setActiveLanguage] = useState(null)
@@ -10,16 +11,7 @@ const App = () => {
     <div className="container">
       <h1>Learn Web development</h1>
       <ul>
-        {languages.map((language) => (
-          <li key={language.id}>
-            <button
-              className={`btn ${language.title.toLowerCase()}`}
-              onClick={() => setActiveLanguage(language)}
-            >
-              {language.title}
-            </button>
-          </li>
-        ))}
+        <ButtonList />
       </ul>
       {activeLanguage && (
         <div className="language-description">
