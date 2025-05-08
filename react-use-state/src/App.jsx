@@ -1,36 +1,33 @@
 import { useState } from 'react'
 import languages from './languages'
 import React from 'react'
+import Button from './assets/components/Button'
 
 const App = () => {
   const [activeLanguage, setActiveLanguage] = useState(null)
-  console.log(activeLanguage)
 
   return (
-    <>
-      <div>
-        <h1>Learn Web development</h1>
-      </div>
-      <div className="container">
-        <div className="card">
-          <div className="card-item">
-            <ul>
-              {languages.map((language) => (
-                <li key={language.id}>
-                  <button
-                    className={`btn ${language.title.toLowerCase()}`}
-                    onClick={() => setActiveLanguage(language)}
-                  >
-                    {language.title}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <p>Ciao ciao</p>
+    <div className="container">
+      <h1>Learn Web development</h1>
+      <ul>
+        {languages.map((language) => (
+          <li key={language.id}>
+            <button
+              className={`btn ${language.title.toLowerCase()}`}
+              onClick={() => setActiveLanguage(language)}
+            >
+              {language.title}
+            </button>
+          </li>
+        ))}
+      </ul>
+      {activeLanguage && (
+        <div className="language-description">
+          <h2>{activeLanguage.title}</h2>
+          <p>{activeLanguage.description}</p>
         </div>
-      </div>
-    </>
+      )}
+    </div>
   )
 }
 
