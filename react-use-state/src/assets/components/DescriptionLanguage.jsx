@@ -1,7 +1,7 @@
 import React from 'react'
-import languages from '../../languages'
 
-const DescriptionLanguage = ({ setActiveLanguage }) => {
+
+const DescriptionLanguage = ({ activeLanguage }) => {
 
     return (
         <div>

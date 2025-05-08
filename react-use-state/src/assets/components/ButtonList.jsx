@@ -1,7 +1,6 @@
 import React from 'react'
 import languages from '../../languages'
 
-// Ricevi setActiveLanguage come prop dal componente genitore
 const ButtonList = ({ setActiveLanguage }) => {
     return (
         <ul>
